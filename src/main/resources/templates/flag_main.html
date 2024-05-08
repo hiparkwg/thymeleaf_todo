@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Thymeleaf flagment</title>
+   <style>
+      .footer{
+         background-color:#ddf; 
+         box-sizing: border-box;
+         padding:20px;
+         margin-bottom:20px;
+      }
+      .flag{
+         background-color:#fdd; 
+         border:6px solid #44f;
+      }
+   </style>
+</head>
+<body>
+   <h1>Fragment Main</h1>
+
+   <!--header-->
+   <div th:include="~{./flagments/flag_sub::header}"></div>
+
+   <!-- parameter -->
+   <h3>파라미터를 전달하여 replace로 그 결과를 fragment로 </h3>
+   <div th:replace="~{./flagments/flag_sub::param('hong', '인천')}"></div>
+
+   <h3>파라미터를 전달하여 include로 그 결과를 fragment로 </h3>
+   <div th:include="~{./flagments/flag_sub::param('hong', '인천')}"></div>
+
+
+   <!--insert-->
+   <div class='footer' th:insert="~{./flagments/flag_sub::footer}"></div>
+   <!--include-->
+   <div class='footer' th:include="~{./flagments/flag_sub::footer}"></div>
+   <!--replace-->
+   <div class='footer' th:replace="~{./flagments/flag_sub::footer}"></div>
+</body>
+</html>

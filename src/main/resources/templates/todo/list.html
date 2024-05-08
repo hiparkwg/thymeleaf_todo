@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <link rel="stylesheet" href="css/todo.css">
+    <script defer src="js/todo.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>TODO...</h1>
+
+        <form name="register" class='register' method="post">
+            <input type="text" th:value="${doc}"
+                class="doc" name="doc" size="80" placeholder="todo를 추가하셔"/>
+            <button type='button' class="btnRegister">추가</button>
+            <button type='button' class="btnSearch">검색</button>
+        </form>
+
+        <div class="list">
+            <form name="list" method="post" class="row" th:each="item : ${list}">
+                <input type="hidden" name="sno" th:value="${item.sno}"/>
+                <span class="nal" th:text="${item.nal}"/>
+                <textarea type="text" name="doc" class="doc" >[[${item.doc}]]</textarea>
+                <span class="info" th:text="|(${item.chk})|"/>
+                <select class="chk" name="chk">
+                    <option value="진행중">진행중</option>
+                    <option value="보류">보류</option>
+                    <option value="완료">완료</option>
+                    <option value="취소">취소</option>
+                </select>
+                <button type='button' class="btnModify" onclick="modify(this.form)">수정</button>
+                <button type='button' class="'btnDelete" onclick="del(this.form)">삭제</button>
+            </form>
+        </div>
+    </div>
+
+
+<th:block th:if="${msg ne '' and msg ne null }">
+    <script defer thi:inline="javascript">
+        window.setTimeout(()=>{
+            alert('[[${msg}]]')
+        }, 100)
+    </script>
+</th:block>
+
+</body>
+
+</html>

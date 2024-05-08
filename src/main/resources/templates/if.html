@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>thymeleaf-if</title>
+</head>
+<body>
+   <h1>Thymeleaf IF</h1>   
+   x : [[${x}]] <br/>
+   y : [[${y}]] <br/>
+   <span th:if="${x gt y}">x가 커유~</span>
+   <span th:if="${x lt y}">y가 커유~</span>
+</body>
+</html>

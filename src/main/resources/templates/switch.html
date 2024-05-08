@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>thymeleaf-switch </title>
+</head>
+<body>
+   <h1>Thymeleaf switch</h1>
+   <font color='red'>grade = [[${grade}]]</font><br/>
+   <th:block th:switch="${grade}">
+      <span th:case="A">90이상입니다.</span>
+      <span th:case="B">80이상입니다.</span>
+      <span th:case="C">70이상입니다.</span>
+      <span th:case="D">60이상입니다.</span>
+      <span th:case="*">과락입니다..</span>
+   </th:block>
+</body>
+</html>

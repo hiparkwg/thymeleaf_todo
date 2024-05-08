@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <header th:fragment="header">
+      <h2>fragment로 만들어진 header</h2>
+   </header>
+
+   <footer class='flag' th:fragment="footer">
+      <font color="red">fragment로 만들어진 footer</font>
+   </footer>
+
+
+   <div th:fragment="param(param1, param2)">
+      <ol>
+         <li th:text="|param1 = ${param1}|"></li>
+         <li th:text="|param2 = ${param2}|"></li>
+      </ol>
+   </div>
+</body>
+</html>
