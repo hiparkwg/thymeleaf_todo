@@ -1,8 +1,8 @@
 /* todo */
-
+// url 고정
+history.pushState(null, null, "/todo_list");
 
 // 저장
-history.pushState(null, null, "/todo_list");
 let btnRegister = document.querySelector('.btnRegister');
 btnRegister.addEventListener('click', ()=>{
     let frm = document.querySelector('.register');
