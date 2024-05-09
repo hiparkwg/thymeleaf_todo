@@ -1,12 +1,12 @@
 /* todo */
 // url 고정
-history.pushState(null, null, "/todo_list");
+history.pushState(null, null, "todo_list");
 
 // 저장
 let btnRegister = document.querySelector('.btnRegister');
 btnRegister.addEventListener('click', ()=>{
     let frm = document.querySelector('.register');
-    frm.action = "/todo_register";
+    frm.action = "todo_register";
     frm.submit();
 })
 
@@ -14,7 +14,7 @@ btnRegister.addEventListener('click', ()=>{
 let btnSearch = document.querySelector('.btnSearch');
 btnSearch.addEventListener('click', ()=>{
     let frm = document.querySelector('.register');
-    frm.action = "/todo_list";
+    frm.action = "todo_list";
     frm.submit();
 })
 
@@ -25,7 +25,7 @@ let modify = (frm)=>{
         return;
     } 
 
-    frm.action="/todo_update";
+    frm.action="todo_update";
     frm.submit();
 }
 let del = (frm) =>{
@@ -34,6 +34,6 @@ let del = (frm) =>{
         btnSearch.click();
         return;
     }
-    frm.action="/todo_delete";
+    frm.action="todo_delete";
     frm.submit();
 }
