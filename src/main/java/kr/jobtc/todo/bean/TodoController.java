@@ -12,6 +12,13 @@ public class TodoController {
     @Autowired
     TodoDao dao;
     
+    public ModelAndView list(){
+        Todo t = new Todo();
+        ModelAndView mv = list(t);
+        return mv;
+    }
+
+
     @RequestMapping(path="/todo_list")
     public ModelAndView list(Todo vo){
         ModelAndView mv = new ModelAndView();
@@ -30,7 +37,7 @@ public class TodoController {
         boolean b = dao.register(vo);
         if(b) msg = "";
 
-        mv = list(new Todo());
+        mv = list();
         mv.addObject("msg", msg);
         return mv;
     }
@@ -41,8 +48,8 @@ public class TodoController {
         String msg = "수정중 오류 발생";
 
         boolean b = dao.update(vo);
-        if(b) msg="aaa";
-        mv = list(new Todo());
+        if(b) msg="";
+        mv = list();
         mv.addObject("msg", msg);
         return mv;
     }
@@ -51,8 +58,8 @@ public class TodoController {
         ModelAndView mv = null;
         String msg = "삭제중 오류 발생";
         boolean b = dao.delete(vo.getSno());
-        if(b) msg="aaa";
-        mv = list(new Todo());
+        if(b) msg="";
+        mv = list();
         mv.addObject("msg", msg);
 
         return mv;
