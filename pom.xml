@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>kr.jobtc</groupId>
 	<artifactId>todo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>test 0.0.1</version>
 	<packaging>war</packaging>
 	<name>todo</name>
 	<description>Demo project for Spring Boot</description>
@@ -68,6 +68,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>todo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
